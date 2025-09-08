@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: property_db
+      POSTGRES_USER: postgres_user
+      POSTGRES_PASSWORD: postgres_pass
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:latest
+    container_name: redis_cache
+    restart: always
+    ports:
+      - "6379:6379"
